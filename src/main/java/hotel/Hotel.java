@@ -36,4 +36,8 @@ public class Hotel {
     public void checkOut(Guest guest, BedRoom bedRoom) {
         bedRoom.removeGuest(guest);
     }
+
+    public Booking bookRoom(Booking booking) {
+        return booking;
+    }
 }

@@ -8,10 +8,12 @@ public abstract class Room {
 
     private int capacity;
     private ArrayList<Guest> guestList;
+    private double nightlyRate;
 
-    public Room(int capacity) {
+    public Room(int capacity, double nightlyRate) {
         this.capacity = capacity;
         this.guestList = new ArrayList<Guest>();
+        this.nightlyRate = nightlyRate;
     }
 
     public int getCapacity() {
@@ -32,5 +34,14 @@ public abstract class Room {
 
     public void removeGuest(Guest guest) {
         this.guestList.remove(guest);
+    }
+
+    public double getNightlyRate() {
+        return this.nightlyRate;
+    }
+
+    public static double getRoomSize(double width, double length) {
+        return width * length;
+
     }
 }

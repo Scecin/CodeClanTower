@@ -13,7 +13,7 @@ public class BedRoomTest {
 
     @Before
     public void before() {
-        bedRoom = new BedRoom(RoomType.FAMILY.getCapacity(), 120, RoomType.FAMILY);
+        bedRoom = new BedRoom(120, RoomType.FAMILY);
     }
 
     @Test
@@ -53,8 +53,16 @@ public class BedRoomTest {
         bedRoom.addGuest(guest2);
         bedRoom.removeGuest(guest1);
         assertEquals(1, bedRoom.getNumberOfGuests());
+    }
 
+    @Test
+    public void hasNightlyRate() {
+        assertEquals(RoomType.FAMILY.getNightlyRate(), bedRoom.getNightlyRate(), 0.0);
+    }
 
+    @Test
+    public void hasRoomSize() {
+        assertEquals(1000, bedRoom.getRoomSize(100, 10), 0.0);
     }
 
 }
